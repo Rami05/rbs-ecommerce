@@ -1,0 +1,30 @@
+spring.application.name: RBS-service
+server.port: 8000
+
+## DB config
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+        format_sql: true
+        generate_statistics: false
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driver-class-name: org.postgresql.Driver 
+    url: jdbc:postgresql://localhost:5432/RBS-Ecommerce
+    username: admin
+    password: admin
+
+# Logging     
+logging.level:
+  org.hibernate:
+    stat: debug
+    type: trace
+
+
